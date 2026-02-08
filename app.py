@@ -116,6 +116,13 @@ def seed():
 
     return render_template('index.html', error=f"Seeded {created} fictional users.")
 
+@app.route('/clear')
+def clear_db():
+    db.drop_all()
+    db.create_all()
+    seed()
+    return "Database wiped and re-seeded"
+
 def find_matches(new, n = None):
     if n is None:
         n = new.people
