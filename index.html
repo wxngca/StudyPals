@@ -1,13 +1,47 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>studypals</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Buddy Matcher</title>
+    <style>
+        body { font-family: sans-serif; max-width: 500px; margin: 50px auto; line-height: 1.6; }
+        input, select { width: 100%; padding: 8px; margin: 10px 0; }
+        button { background: #007bff; color: white; border: none; padding: 10px; width: 100%; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Find Study Buddies</h2>
+    <form action="/submit" method="POST">
+        <label>Username:</label>
+        <input type="text" name="username" required>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+
+        <label>Courses (separate with commas):</label>
+        <input type="text" name="courses" placeholder="Math, Physics, CS50" required>
+
+        <label>Preferred Day:</label>
+        <select name="day">
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Friday">Friday</option>
+        </select>
+
+        <label>Preferred Time:</label>
+        <select name="time">
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+        </select>
+
+        <label>How many matches do you want to see?</label>
+        <input type="number" name="people" value="3" min="1">
+
+        <button type="submit">Find Matches!</button>
+    </form>
+</body>
 </html>
